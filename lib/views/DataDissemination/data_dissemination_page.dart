@@ -81,7 +81,7 @@ class _DataDisseminationPageState extends State<DataDisseminationPage> {
                           : 'ভৌগোলিক স্থানিক ডেটার দক্ষ শেয়ারিং এবং বিতরণ',
                       style: TextStyle(
                         fontSize: 14,
-                        color: Colors.white.withOpacity(0.9 * 255),
+                        color: Colors.white.withOpacity(0.9),
                       ),
                       textAlign: TextAlign.center,
                     ),

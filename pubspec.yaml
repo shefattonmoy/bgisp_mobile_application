@@ -1,0 +1,39 @@
+name: bgisp
+description: "A new Flutter project."
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  bootstrap_icons: ^1.13.1
+  http: ^1.6.0
+  webview_flutter: ^4.13.1
+  flutter_connectivity: ^0.0.3
+  connectivity_plus: ^7.0.0
+  webview_flutter_android: ^4.10.11
+  webview_flutter_wkwebview: ^3.23.5
+  shared_preferences: ^2.5.4
+  provider: ^6.1.5+1
+  intl: ^0.20.2
+  font_awesome_flutter: ^10.12.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/slider_images/image1.jpeg
+    - assets/slider_images/image2.jpeg
+    - assets/slider_images/image3.jpeg
+    - assets/slider_images/image4.jpeg

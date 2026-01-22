@@ -115,7 +115,7 @@ class _MetadataPageState extends State<MetadataPage> {
               (metadata.title.toLowerCase().contains(
                 _searchQuery.toLowerCase(),
               )) ||
-              (metadata.abstract.toLowerCase().contains(
+              (metadata.abstractInfo.toLowerCase().contains(
                 _searchQuery.toLowerCase(),
               )) ||
               (metadata.datasetType?.toLowerCase().contains(

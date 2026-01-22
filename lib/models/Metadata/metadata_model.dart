@@ -1,7 +1,7 @@
 class Metadata {
   final int id;
   final String title;
-  final String abstract;
+  final String abstractInfo;
   final String? qualityAndExtent;
   final String? completeness;
   final String? datasetHistory;
@@ -18,7 +18,7 @@ class Metadata {
   Metadata({
     required this.id,
     required this.title,
-    required this.abstract,
+    required this.abstractInfo,
     this.qualityAndExtent,
     this.completeness,
     this.datasetHistory,
@@ -37,7 +37,7 @@ class Metadata {
     return Metadata(
       id: json['id'] as int,
       title: json['title'] as String,
-      abstract: json['abstract'] as String,
+      abstractInfo: json['abstract'] as String,
       qualityAndExtent: json['quality_and_extend'] as String?,
       completeness: json['completeness'] as String?,
       datasetHistory: json['dataset_history'] as String?,
@@ -61,7 +61,7 @@ class Metadata {
     return {
       'id': id,
       'title': title,
-      'abstract': abstract,
+      'abstract': abstractInfo,
       'quality_and_extend': qualityAndExtent,
       'completeness': completeness,
       'dataset_history': datasetHistory,
@@ -81,7 +81,7 @@ class Metadata {
   List<Map<String, String?>> getDisplayFields() {
     return [
       {'label': 'Title', 'value': title},
-      {'label': 'Abstract', 'value': abstract},
+      {'label': 'Abstract', 'value': abstractInfo},
       {'label': 'Quality and Extent', 'value': qualityAndExtent},
       {'label': 'Completeness', 'value': completeness},
       {'label': 'Dataset History', 'value': datasetHistory},

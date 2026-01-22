@@ -73,12 +73,10 @@ class MetadataApi {
       return allMetadata
           .where(
             (metadata) =>
-                (metadata.title?.toLowerCase().contains(query.toLowerCase()) ??
-                    false) ||
-                (metadata.abstract?.toLowerCase().contains(
-                      query.toLowerCase(),
-                    ) ??
-                    false) ||
+                (metadata.title.toLowerCase().contains(query.toLowerCase())) ||
+                (metadata.abstract.toLowerCase().contains(
+                  query.toLowerCase(),
+                )) ||
                 (metadata.datasetType?.toLowerCase().contains(
                       query.toLowerCase(),
                     ) ??

@@ -1,9 +1,8 @@
 class Metadata {
   final int id;
-  final String? title;
-  final String? abstract;
-  final String? general;
-  final String? qualityAndExtend;
+  final String title;
+  final String abstract;
+  final String? qualityAndExtent;
   final String? completeness;
   final String? datasetHistory;
   final String? productionPurpose;
@@ -18,10 +17,9 @@ class Metadata {
 
   Metadata({
     required this.id,
-    this.title,
-    this.abstract,
-    this.general,
-    this.qualityAndExtend,
+    required this.title,
+    required this.abstract,
+    this.qualityAndExtent,
     this.completeness,
     this.datasetHistory,
     this.productionPurpose,
@@ -38,10 +36,9 @@ class Metadata {
   factory Metadata.fromJson(Map<String, dynamic> json) {
     return Metadata(
       id: json['id'] as int,
-      title: json['title'] as String?,
-      abstract: json['abstract'] as String?,
-      general: json['general'] as String?,
-      qualityAndExtend: json['quality_and_extend'] as String?,
+      title: json['title'] as String,
+      abstract: json['abstract'] as String,
+      qualityAndExtent: json['quality_and_extend'] as String?,
       completeness: json['completeness'] as String?,
       datasetHistory: json['dataset_history'] as String?,
       productionPurpose: json['production_purpose'] as String?,
@@ -65,8 +62,7 @@ class Metadata {
       'id': id,
       'title': title,
       'abstract': abstract,
-      'general': general,
-      'quality_and_extend': qualityAndExtend,
+      'quality_and_extend': qualityAndExtent,
       'completeness': completeness,
       'dataset_history': datasetHistory,
       'production_purpose': productionPurpose,
@@ -86,8 +82,7 @@ class Metadata {
     return [
       {'label': 'Title', 'value': title},
       {'label': 'Abstract', 'value': abstract},
-      {'label': 'General', 'value': general},
-      {'label': 'Quality and Extend', 'value': qualityAndExtend},
+      {'label': 'Quality and Extent', 'value': qualityAndExtent},
       {'label': 'Completeness', 'value': completeness},
       {'label': 'Dataset History', 'value': datasetHistory},
       {'label': 'Production Purpose', 'value': productionPurpose},

@@ -112,14 +112,12 @@ class _MetadataPageState extends State<MetadataPage> {
 
         if (_searchQuery.isNotEmpty) {
           matchesSearch =
-              (metadata.title?.toLowerCase().contains(
-                    _searchQuery.toLowerCase(),
-                  ) ??
-                  false) ||
-              (metadata.abstract?.toLowerCase().contains(
-                    _searchQuery.toLowerCase(),
-                  ) ??
-                  false) ||
+              (metadata.title.toLowerCase().contains(
+                _searchQuery.toLowerCase(),
+              )) ||
+              (metadata.abstract.toLowerCase().contains(
+                _searchQuery.toLowerCase(),
+              )) ||
               (metadata.datasetType?.toLowerCase().contains(
                     _searchQuery.toLowerCase(),
                   ) ??
@@ -221,7 +219,7 @@ class _MetadataPageState extends State<MetadataPage> {
                   ),
                   items: [
                     DropdownMenuItem(
-                      value: '', 
+                      value: '',
                       child: Text(_languageHelper.translate('all_types')),
                     ),
                     ..._metadataList
@@ -231,8 +229,7 @@ class _MetadataPageState extends State<MetadataPage> {
                         .map(
                           (type) =>
                               DropdownMenuItem(value: type, child: Text(type)),
-                        )
-                        ,
+                        ),
                   ],
                   onChanged: (value) {
                     setState(() {
@@ -345,7 +342,9 @@ class _MetadataPageState extends State<MetadataPage> {
               'pagination_info',
               params: {
                 'start': ((_currentPage - 1) * _itemsPerPage) + 1,
-                'end': ((_currentPage - 1) * _itemsPerPage) + _paginatedMetadataList.length,
+                'end':
+                    ((_currentPage - 1) * _itemsPerPage) +
+                    _paginatedMetadataList.length,
                 'total': _filteredMetadataList.length,
               },
             ),
@@ -510,7 +509,9 @@ class _MetadataPageState extends State<MetadataPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF0D47A1)),
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      Color(0xFF0D47A1),
+                    ),
                   ),
                   const SizedBox(height: 16),
                   Text(
@@ -614,8 +615,9 @@ class _MetadataPageState extends State<MetadataPage> {
                       )
                     : ListView(
                         children: [
-                          ..._paginatedMetadataList
-                              .map((metadata) => _buildMetadataItem(metadata)),
+                          ..._paginatedMetadataList.map(
+                            (metadata) => _buildMetadataItem(metadata),
+                          ),
                           _buildPaginationControls(),
                         ],
                       ),
